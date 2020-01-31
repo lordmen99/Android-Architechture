@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+    <TextView
+            android:id="@+id/ticketId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:text="Priority"
+            android:textColor="#000000"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"/>
+
+    <TextView
+            android:id="@+id/ticketname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:text="Priority"
+            android:textColor="#000000"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"/>
+
+    <TextView
+            android:id="@+id/ticketdesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:text="Priority"
+            android:textColor="#000000"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GET"
+            android:textColor="#000000"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"
+            android:onClick="getTokenView"/>
+
+</LinearLayout>
