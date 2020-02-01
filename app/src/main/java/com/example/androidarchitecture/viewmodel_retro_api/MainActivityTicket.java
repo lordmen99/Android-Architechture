@@ -1,5 +1,6 @@
 package com.example.androidarchitecture.viewmodel_retro_api;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import com.example.androidarchitecture.R;
+import com.example.androidarchitecture.viewmodel_retro_api.model.Ticket;
 import com.example.androidarchitecture.viewmodel_retro_api.viewmodel.TicketViewModel;
 
 public class MainActivityTicket extends AppCompatActivity {
@@ -23,22 +25,45 @@ public class MainActivityTicket extends AppCompatActivity {
         ticketname = findViewById(R.id.ticketname);
         ticketdesc = findViewById(R.id.ticketdesc);
 
-        ticketViewModel = ViewModelProviders.of(this).get(TicketViewModel.class);
-        ticketViewModel.getTicketValue();
+        ticketViewModel = ViewModelProviders.of(MainActivityTicket.this).get(TicketViewModel.class);
+
+        ticketViewModel.getTicketValue(MainActivityTicket.this);
 
 
     }
 
 
     public void getTokenView(View view){
-        String ticketidval = ticketViewModel.getTicketValue().getTicketid().toString();
+        ticketViewModel.getTicketValue(MainActivityTicket.this)
+                .observe(MainActivityTicket.this, new Observer<Ticket>() {
+            @Override
+            public void onChanged(Ticket charSequence) {
+                String ticketidval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                        .getValue().getTicketid();
+                ticketid.setText(ticketidval);
+
+                String ticketnameval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                        .getValue().getTicketname();
+                ticketname.setText(ticketnameval);
+
+                String ticketdescval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                        .getValue().getTicketdesc();
+                ticketdesc.setText(ticketdescval);
+            }
+        });
+
+
+        /*String ticketidval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                .getValue().getTicketid();
         ticketid.setText(ticketidval);
 
-        String ticketnameval = ticketViewModel.getTicketValue().getTicketname().toString();
+        String ticketnameval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                .getValue().getTicketname();
         ticketname.setText(ticketnameval);
 
-        String ticketdescval = ticketViewModel.getTicketValue().getTicketdesc().toString();
-        ticketdesc.setText(ticketdescval);
+        String ticketdescval = ticketViewModel.getTicketValue(MainActivityTicket.this)
+                .getValue().getTicketdesc();
+        ticketdesc.setText(ticketdescval);*/
 
     }
 

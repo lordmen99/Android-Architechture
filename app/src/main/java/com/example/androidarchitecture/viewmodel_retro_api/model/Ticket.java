@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class Ticket {
 
-    @SerializedName("UserIdCode")
+    @SerializedName("Id")
     @Expose
     public String ticketid;
 
-    @SerializedName("Address")
+    @SerializedName("Name")
     @Expose
     public String ticketname;
 
-    @SerializedName("Location")
+    @SerializedName("EmailId")
     @Expose
     public String ticketdesc;
 

@@ -2,8 +2,6 @@ package com.example.androidarchitecture.room_dao_recyclerview;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.*;
-import com.example.androidarchitecture.room_dao_recyclerview.Note;
-
 import java.util.List;
 
 @Dao
