@@ -4,9 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
-import com.example.androidarchitecture.room_dao_recyclerview.Note;
-import com.example.androidarchitecture.room_dao_recyclerview.NoteRepository;
-
 import java.util.List;
 
 public class NoteViewModel extends AndroidViewModel {

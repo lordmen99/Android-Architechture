@@ -3,9 +3,6 @@ package com.example.androidarchitecture.room_dao_recyclerview;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-import com.example.androidarchitecture.room_dao_recyclerview.Note;
-import com.example.androidarchitecture.room_dao_recyclerview.NoteDao;
-import com.example.androidarchitecture.room_dao_recyclerview.NoteDatabase;
 
 import java.util.List;
 
